@@ -14,8 +14,8 @@ We have default roles in the application. But more can be created
 
 ## Running the code
 1. Build with maven
-2. Deploy a container with postgres on port 5432
-3. Run the application using dev profile
+2. Deploy a container with postgres on port 5432(check [application.yml](src/main/resources/application.yml))
+3. **Run the application using dev profile**
 4. Or just run make run-all and it will run the application on a container for you
 
 Check the [docker-compose.yml](docker-compose.yml) file for more details
