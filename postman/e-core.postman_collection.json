@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "f6462462-24e2-4454-9923-cf690cfbeddc",
+		"name": "e-core",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create role",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Scrum Master\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"roleId\":\"762fc856-41c6-492d-b6a4-38e4c5d1c274\",\n    \"teamId\":\"7676a4bf-adfe-415c-941b-1739af070393\",\n    \"userId\":\"371d2ee8-cdf4-48cf-9ddb-04798b79ad99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/memberships",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"memberships"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find role by membership",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/roles/:teamId/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"roles",
+						":teamId",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "teamId",
+							"value": "7676a4bf-adfe-415c-941b-1739af07039b"
+						},
+						{
+							"key": "userId",
+							"value": "371d2ee8-cdf4-48cf-9ddb-04798b79ad9e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find memberships by role",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/memberships/role/:roleId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"memberships",
+						"role",
+						":roleId"
+					],
+					"variable": [
+						{
+							"key": "roleId",
+							"value": "762fc856-41c6-492d-b6a4-38e4c5d1c274"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
